@@ -12,7 +12,7 @@
 # Important Links
 
 * [Slideshow Presentation](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Non_Technical_Slideshow.pdf)
-* [Non-Technical Video Presentation](https://youtu.be/O0hrbKkH1n4)
+* [Non-Technical Video Presentation](https://youtu.be/8KW4okIJfRc)
 * [Jupyter Notebook with Cleaning](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Cleaning.ipynb)
 * [Jupyter Notebook with Exploratory Data Analysis (EDA)](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/EDA.ipynb)
 * [Jupyter Notebook Modeling and Validation](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Modeling.ipynb)
