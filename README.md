@@ -13,9 +13,10 @@
 
 * [Slideshow Presentation](https://github.com/tiaplagata/dsc-phase-2-project-online/blob/master/King%20County%20Real%20Estate.pdf)
 * [Non-Technical Video Presentation](https://youtu.be/O0hrbKkH1n4)
-* [Jupyter Notebook with Cleaning](https://github.com/tiaplagata/dsc-phase-2-project-online/blob/master/notebooks/Cleaning_Workbook.ipynb)
-* [Jupyter Notebook with Exploratory Data Analysis (EDA)](https://github.com/tiaplagata/dsc-phase-2-project-online/blob/master/notebooks/EDA_Questions_Notebook.ipynb)
-* [Jupyter Notebook with Linear Regression Modeling and Validation](https://github.com/tiaplagata/dsc-phase-2-project-online/blob/master/notebooks/Linear_Regression_Workbook.ipynb)
+* [Jupyter Notebook with Cleaning](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Cleaning.ipynb)
+* [Jupyter Notebook with Exploratory Data Analysis (EDA)](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/EDA.ipynb)
+* [Jupyter Notebook Modeling and Validation](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Modeling.ipynb)
+
 
 # Project Overview
 
@@ -80,7 +81,7 @@ There could be a few reasons for this difference in churn in different states. O
 
 Based on these findings, I would recommend looking into competitors in Texas, California, New Jersey, and other states with high churn to see if they are offering introductory offers that might compel some of our customers to churn. I also recommend looking into the cell signal in these states with higher churn to see if there are any deadzones contributing to the higher rates. 
 
-# EDA Conclusion
+## EDA Conclusion
 
 In conclusion, calls to customer service seems to be one of the biggest indicators of customer churn. We can also see higher churn in certain states, although the reasons why specific states are more likely to churn is unclear based on this data. We can also see that customers may not be happy with their international plans, which is why customers with an international plan are more likely to churn than customers without an international plan.
 
@@ -89,11 +90,12 @@ In conclusion, calls to customer service seems to be one of the biggest indicato
 
 My final model was a Gradient Boosting classifier, which can predict customer churn with 83% recall.
     
-**Metric Used**
+## Metric Used
 
 I used recall to score this model because with churn rate, false negatives will cost us more than false positives. For example, misidentifying someone as 'churned' and hitting them with a customer retention strategy to keep them engaged would be less costly than missing someone who churned, losing them as a customer AND having to pay a new customer acquisition cost to replace them. 
 
-**Cost Benefit Analysis**
+
+## Cost Benefit Analysis
 
 Let's say the cost of a False Positive is having to give a customer a discount of 50% off one month of free service when they were not actually going to churn. For this analysis we will say that the **cost of a FP = 25 USD per customer (-25)**.
 
@@ -107,13 +109,15 @@ The **benefit of a True Negative = 0** since they were not going to churn and we
 
 Based on this cost benefit analysis, our expected value from this strategy is 52 cents per customer per month. That may not seem like much, but for millions of customers it would add up. The good news here is that with this model predicting churn, we are not LOSING money! We can see the breakdown of each cost and benefit multiplied by the number of TP, TN, FP, FNs on the confusion matrix above. 
 
-**Feature Importances**
+
+## Feature Importances
 
 The final model's feature importances are graphed below. 
 
 ![feat_importances](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/feature_importances.png?raw=true)
 
-**Model Fit & Score**
+
+## Model Fit & Score
 
 The final model had the following training and validation recall scores:
 * Validation Recall Score 0.83
@@ -121,7 +125,8 @@ The final model had the following training and validation recall scores:
 
 Since these recall scores are so close, we can assume the model is slightly overfit, but overall very good on recall. This model produced only 9 (2%) false negatives for the validation set. It produced only 1 (0.003%) false positive from the validation set, but if our customer retention strategy is to keep these customers engaged, it is not a bad thing to keep a customer engaged who is mispredicted as potentially exiting.
 
-**Model Conclusion**
+
+## Model Conclusion
 
 In conclusion, based on this model's recall score and cost benefit analysis, using this model to predict the churn of SyriaTel's customers will result in a large cost savings, and even an opportunity to make money ($0.52 per customer per month). 
 
