@@ -1,6 +1,6 @@
 # Welcome! In this project, I built a model to predict customer churn!
 
-![hello](https://github.com/tiaplagata/dsc-phase-2-project-online/blob/master/images/King%20County%20Real%20Estate.png?raw=true)
+![hello](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/Phase%203%20Project.png?raw=true)
 
 # Navigation
 
@@ -95,15 +95,35 @@ I used recall to score this model because with churn rate, false negatives will 
 
 **Cost Benefit Analysis**
 
+Let's say the cost of a False Positive is having to give a customer a discount of 50% off one month of free service when they were not actually going to churn. For this analysis we will say that the **cost of a FP = 25 USD per customer (-25)**.
+
+Alternatively, the cost of a False Negative is losing that customer (and their monthly payment of 50 USD) and having to go out and get a new customer (customer acqusition cost of 50 USD). Therefore, we will say that the **cost of a FN = 100 USD per customer (-100)**.
+
+The benefit of a True Positive is keeping that customer on and having them continue paying their 50 USD monthly payment, minus the 50% discount. **Benefit of TP = 25**
+
+The **benefit of a True Negative = 0** since they were not going to churn and we predicted that, so we did not offer any discounts.
+
 ![cb_analysis](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/cm_cb_analysis.png?raw=true)
 
 Based on this cost benefit analysis, our expected value from this strategy is 52 cents per customer per month. That may not seem like much, but for millions of customers it would add up. The good news here is that with this model predicting churn, we are not LOSING money! We can see the breakdown of each cost and benefit multiplied by the number of TP, TN, FP, FNs on the confusion matrix above. 
 
 **Feature Importances**
 
+The final model's feature importances are graphed below. 
 
+![feat_importances](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/feature_importances.png?raw=true)
 
-In conclusion, this model functions fairly well, but could benefit from more tinkering to increase the r2 score (see more in future work).
+**Model Fit & Score**
+
+The final model had the following training and validation recall scores:
+* Validation Recall Score 0.83
+* Training Recall Score 0.88
+
+Since these recall scores are so close, we can assume the model is slightly overfit, but overall very good on recall. This model produced only 9 (2%) false negatives for the validation set. It produced only 1 (0.003%) false positive from the validation set, but if our customer retention strategy is to keep these customers engaged, it is not a bad thing to keep a customer engaged who is mispredicted as potentially exiting.
+
+**Model Conclusion**
+
+In conclusion, based on this model's recall score and cost benefit analysis, using this model to predict the churn of SyriaTel's customers will result in a large cost savings, and even an opportunity to make money ($0.52 per customer per month). 
 
 
 # Future Work
