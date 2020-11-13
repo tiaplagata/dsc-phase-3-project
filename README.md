@@ -95,7 +95,9 @@ I used recall to score this model because with churn rate, false negatives will 
 
 **Cost Benefit Analysis**
 
-![cb_analysis](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/churn_by_state_choropleth.png?raw=true)
+![cb_analysis](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/cm_cb_analysis.png?raw=true)
+
+Based on this cost benefit analysis, our expected value from this strategy is 52 cents per customer per month. That may not seem like much, but for millions of customers it would add up. The good news here is that with this model predicting churn, we are not LOSING money! We can see the breakdown of each cost and benefit multiplied by the number of TP, TN, FP, FNs on the confusion matrix above. 
 
 **Feature Importances**
 
